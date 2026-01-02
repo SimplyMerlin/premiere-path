@@ -4,5 +4,6 @@ export type Project = {
     media: {
         path: string;
         relativePath: string;
+        usageAmount: number;
     }[];
 };

@@ -49,9 +49,15 @@
 				continue;
 			}
 			const path = mediaElement.querySelector('ActualMediaFilePath')!.textContent;
+			const alreadyAdded = media.find((m) => m.path === path);
+			if (alreadyAdded) {
+				alreadyAdded.usageAmount++;
+				continue;
+			}
 			media.push({
 				path: path,
-				relativePath: relativePath.textContent
+				relativePath: relativePath.textContent,
+				usageAmount: 1
 			});
 		}
 

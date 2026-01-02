@@ -7,7 +7,12 @@
 <div class="max-h-full overflow-scroll">
 	<ul>
 		{#each project.media as media}
-			<li>{media.path}</li>
+			<li>
+				<span>{media.path}</span>
+				{#if media.usageAmount > 1}
+					<span class="text-neutral-500">({media.usageAmount})</span>
+				{/if}
+			</li>
 		{/each}
 	</ul>
 </div>
