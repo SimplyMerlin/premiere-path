@@ -4,7 +4,7 @@
 <p align="center">
  See where your media is located, easily!
  <br>
- <a href="https://prem.simplymerlin.com/">View here</a>
+ <a href="https://prem.simplymerlin.com/">Use here</a>
 </p>
 
 ## What?
