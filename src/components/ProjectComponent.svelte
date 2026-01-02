@@ -28,6 +28,7 @@
 			type="text"
 			bind:value={startsWith}
 			class="min-w-0 flex-1 px-1 outline-1 outline-neutral-700"
+			placeholder="Filter..."
 		/>
 		<label class="flex cursor-pointer items-center gap-1 text-sm whitespace-nowrap">
 			<input type="checkbox" bind:checked={hideFiltered} />
