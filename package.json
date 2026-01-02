@@ -37,7 +37,6 @@
 	},
 	"dependencies": {
 		"@types/pako": "^2.0.4",
-		"fast-xml-parser": "^5.3.3",
 		"pako": "^2.1.0"
 	}
 }
