@@ -69,15 +69,6 @@
 	};
 </script>
 
-<!-- <div class="m-4 p-4">
-	<input type="file" onchange={handleUpload} />
-</div>
-{#if project}
-	<div class="m-4 h-full overflow-scroll p-4">
-		<ProjectComponent {project} />
-	</div>
-{/if} -->
-
 <div
 	class="flex h-screen flex-col gap-px bg-neutral-700"
 	role="application"
@@ -88,12 +79,13 @@
 	<div class="flex justify-center bg-neutral-950">
 		<div class="py-4">{status}</div>
 	</div>
-	<div class="grid min-h-0 grow grid-cols-2 gap-px">
-		<div class="flex min-h-0 flex-col bg-neutral-950 p-2">
+	<div class="flex min-h-0 flex-1 bg-neutral-950">
+		<div class="mx-auto flex min-h-0 w-7xl flex-col bg-neutral-950 outline-1 outline-neutral-700">
 			{#if project}
 				<ProjectComponent {project} />
+			{:else}
+				<div class="flex h-full items-center justify-center">No project loaded...</div>
 			{/if}
 		</div>
-		<div class="min-h-0 bg-neutral-950"></div>
 	</div>
 </div>
