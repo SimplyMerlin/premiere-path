@@ -6,7 +6,7 @@
 	let project = $state<Project | null>(null);
 	let fileName = $state<string | null>(null);
 
-	let status = $state('Drag a premiere file into your browser!');
+	let status = $state('Waiting for your premiere pro project...');
 
 	const processFile = (file: File) => {
 		fileName = file.name;
@@ -34,7 +34,7 @@
 			}
 			console.log(media.querySelector('ActualMediaFilePath')?.textContent);
 		}
-		status = 'Yippie!';
+		status = 'Loaded! (you can drag another one in btw if you want)';
 	};
 
 	const createProject = (xmlDocument: Document) => {
@@ -76,15 +76,24 @@
 	ondragover={(e) => e.preventDefault()}
 	ondrop={handleDrop}
 >
-	<div class="flex justify-center bg-neutral-950">
+	<div class="flex items-center justify-between bg-neutral-950 px-8">
 		<div class="py-4">{status}</div>
+		<a
+			class="text-neutral-400 underline decoration-dashed hover:text-neutral-200"
+			href="https://github.com/simplymerlin/premiere-path"
+			target="_blank"
+			rel="noopener noreferrer">github</a
+		>
 	</div>
 	<div class="flex min-h-0 flex-1 bg-neutral-950">
 		<div class="mx-auto flex min-h-0 w-7xl flex-col bg-neutral-950 outline-1 outline-neutral-700">
 			{#if project}
 				<ProjectComponent {project} />
 			{:else}
-				<div class="flex h-full items-center justify-center">No project loaded...</div>
+				<div class="flex h-full flex-col items-center justify-center gap-1">
+					<div>Drag a .prproj file into your browser to see where all the media is located!</div>
+					<div class="text-neutral-400">(fully local in your browser btw)</div>
+				</div>
 			{/if}
 		</div>
 	</div>
